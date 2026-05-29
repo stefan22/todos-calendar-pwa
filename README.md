@@ -1,10 +1,11 @@
 # TODO Calendar PWA
 
-A Node 16-compatible Next.js starter for a user-owned TODO app with responsive views, calendar browsing, GraphQL integration, Hygraph-ready API routes, and PWA configuration.
+A Vercel-ready Next.js starter for a user-owned TODO app with responsive views, calendar browsing, GraphQL integration, Hygraph-ready API routes, and PWA configuration.
 
 ## Stack
 
 - Next.js 13 Pages Router
+- Node.js 24.x
 - TypeScript
 - Tailwind CSS
 - GraphQL with `graphql-request`
