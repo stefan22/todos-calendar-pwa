@@ -48,7 +48,7 @@ export function TodoForm({ initial, onSubmit }: TodoFormProps) {
           placeholder="Add useful details"
         />
       </label>
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 mb-8">
         <label className="grid gap-2 text-sm font-semibold">
           Status
           <select
