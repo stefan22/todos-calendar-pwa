@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="TODO app icon">
+  <rect width="512" height="512" rx="112" fill="#24554a"/>
+  <path fill="#f6f7f1" d="M139 123h234a32 32 0 0 1 32 32v229a32 32 0 0 1-32 32H139a32 32 0 0 1-32-32V155a32 32 0 0 1 32-32Zm21 101h192v-37H160v37Zm0 91h192v-37H160v37Zm0 91h117v-37H160v37Z"/>
+  <path fill="#e5ad36" d="m195 296 35 35 91-104 29 27-118 136-67-67 30-27Z"/>
+</svg>
