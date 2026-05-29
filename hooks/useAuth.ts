@@ -11,6 +11,7 @@ export function useAuthGuard() {
   useEffect(() => {
     const currentUser = getCurrentUser();
     if (!currentUser) {
+      setIsReady(true);
       router.replace("/");
       return;
     }

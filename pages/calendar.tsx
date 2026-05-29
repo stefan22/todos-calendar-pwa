@@ -2,6 +2,7 @@ import { format, getDaysInMonth, parseISO, startOfMonth } from "date-fns";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Button } from "@/components/Button";
+import { AuthLoading, AuthRequired } from "@/components/AuthState";
 import { Layout } from "@/components/Layout";
 import { useAuthGuard } from "@/hooks/useAuth";
 import { useUserTodos } from "@/hooks/useUserTodos";
@@ -26,7 +27,8 @@ export default function CalendarPage() {
     ];
   }, [monthCursor]);
 
-  if (!isReady || !user) return null;
+  if (!isReady) return <AuthLoading />;
+  if (!user) return <AuthRequired />;
 
   function moveMonth(amount: number) {
     setMonthCursor(new Date(monthCursor.getFullYear(), monthCursor.getMonth() + amount, 1));

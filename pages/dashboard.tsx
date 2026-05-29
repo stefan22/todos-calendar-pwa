@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CalendarDays, ListPlus } from "lucide-react";
 import { Button } from "@/components/Button";
 import { Layout } from "@/components/Layout";
+import { AuthLoading, AuthRequired } from "@/components/AuthState";
 import { useAuthGuard } from "@/hooks/useAuth";
 import { useUserTodos } from "@/hooks/useUserTodos";
 
@@ -9,7 +10,8 @@ export default function DashboardPage() {
   const { user, isReady } = useAuthGuard();
   const { todos, stats } = useUserTodos(user);
 
-  if (!isReady || !user) return null;
+  if (!isReady) return <AuthLoading />;
+  if (!user) return <AuthRequired />;
 
   const nextTodos = [...todos].sort((a, b) => a.dueDate.localeCompare(b.dueDate)).slice(0, 4);
 

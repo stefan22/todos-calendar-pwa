@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import type { Todo } from "@/types/todo";
+import { AuthLoading, AuthRequired } from "@/components/AuthState";
 import { Layout } from "@/components/Layout";
 import { TodoForm } from "@/components/TodoForm";
 import { TodoList } from "@/components/TodoList";
@@ -12,7 +13,8 @@ export default function TodosPage() {
   const [editing, setEditing] = useState<Todo | null>(null);
   const sortedTodos = useMemo(() => [...todos].sort((a, b) => a.dueDate.localeCompare(b.dueDate)), [todos]);
 
-  if (!isReady || !user) return null;
+  if (!isReady) return <AuthLoading />;
+  if (!user) return <AuthRequired />;
 
   return (
     <Layout>
